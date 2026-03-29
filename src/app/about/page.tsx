@@ -76,7 +76,7 @@ export default function AboutPage() {
         </p>
       </header>
 
-      <Section title="소개" description="프론트엔드로서의 방향과 배경입니다.">
+      <Section title="소개">
         <div className="max-w-[65ch] space-y-4 text-[15px] leading-[1.75] text-zinc-600 md:text-base md:leading-relaxed">
           {profile.aboutIntro.map((paragraph, i) => (
             <p key={i} className="text-pretty">
@@ -86,15 +86,15 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section title="경력" description="주요 경력과 맡았던 역할입니다.">
+      <Section title="경력">
         <Timeline items={timelineItems} />
       </Section>
 
-      <Section title="교육" description="학력·부트캠프 등 교육 이력입니다.">
+      <Section title="교육">
         <Timeline items={educationTimelineItems} />
       </Section>
 
-      <Section title="핵심 가치" description="일하는 방식에서 중요하게 두는 기준입니다.">
+      <Section title="핵심 가치">
         <ul className="max-w-[65ch] space-y-8">
           {values.map((value) => (
             <li key={value.title} className="border-l-2 border-zinc-200 pl-5">
