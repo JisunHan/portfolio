@@ -44,14 +44,14 @@ export default function HomePage() {
                 About Me
               </Link>
 
-              <a
+              {/* <a
                 href={profile.contact.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full px-2 py-2.5 text-sm font-medium text-zinc-500 underline-offset-4 transition hover:text-zinc-900 hover:underline"
               >
                 Resume
-              </a>
+              </a> */}
             </div>
           </div>
 

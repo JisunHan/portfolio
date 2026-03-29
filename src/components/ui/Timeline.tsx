@@ -3,7 +3,7 @@ type TimelineItem = {
   title: string;
   subtitle?: string;
   period: string;
-  body: React.ReactNode;
+  body?: React.ReactNode;
 };
 
 type TimelineProps = {
@@ -22,7 +22,9 @@ export default function Timeline({ items }: TimelineProps) {
           <p className="text-xs font-medium uppercase tracking-wide text-accent">{item.period}</p>
           <h3 className="mt-1 text-base font-semibold text-zinc-900">{item.title}</h3>
           {item.subtitle && <p className="text-sm text-zinc-600">{item.subtitle}</p>}
-          <div className="mt-3 text-sm leading-relaxed text-zinc-600">{item.body}</div>
+          {item.body != null && item.body !== false && (
+            <div className="mt-3 text-sm leading-relaxed text-zinc-600">{item.body}</div>
+          )}
         </li>
       ))}
     </ol>

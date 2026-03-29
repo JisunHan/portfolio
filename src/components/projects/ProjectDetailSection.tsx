@@ -28,9 +28,11 @@ export default function ProjectDetailSection({
             {n}
           </span>
         </div>
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 pb-6">
           {eyebrow && (
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400">{eyebrow}</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400">
+              {eyebrow}
+            </p>
           )}
           <h2
             id={`${id}-heading`}

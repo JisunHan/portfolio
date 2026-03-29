@@ -24,6 +24,13 @@ export type ExperienceItem = {
   majorProjects?: string[];
 };
 
+export type EducationItem = {
+  id: string;
+  institution: string;
+  detail: string;
+  period: string;
+};
+
 export type SkillCategory = {
   id: string;
   title: string;

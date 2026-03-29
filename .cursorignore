@@ -1,0 +1,6 @@
+# Cursor 인덱싱·컨텍스트에서 제외 (src는 제외하지 않음)
+node_modules
+.next
+.pnpm-store
+out
+dist

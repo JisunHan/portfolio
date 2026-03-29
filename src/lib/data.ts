@@ -1,6 +1,7 @@
-import type { ExperienceItem, Profile, Project, SkillCategory } from '@/types/portfolio';
+import type { EducationItem, ExperienceItem, Profile, Project, SkillCategory } from '@/types/portfolio';
 import projectsData from '@/data/projects.json';
 import experienceData from '@/data/experience.json';
+import educationData from '@/data/education.json';
 import skillsData from '@/data/skills.json';
 import profileData from '@/data/profile.json';
 
@@ -20,6 +21,10 @@ export function getFeaturedProjects(limit = 3): Project[] {
 
 export function getExperience(): ExperienceItem[] {
   return experienceData as ExperienceItem[];
+}
+
+export function getEducation(): EducationItem[] {
+  return educationData as EducationItem[];
 }
 
 export function getSkills(): SkillCategory[] {

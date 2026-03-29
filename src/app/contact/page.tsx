@@ -35,7 +35,9 @@ export default function ContactPage() {
             <FaGithub className="mt-0.5 h-5 w-5 shrink-0 text-zinc-500" aria-hidden />
             <div>
               <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">GitHub</p>
-              <p className="mt-1 text-sm text-accent">{contact.github.replace(/^https?:\/\//, '')}</p>
+              <p className="mt-1 text-sm text-accent">
+                {contact.github.replace(/^https?:\/\//, '')}
+              </p>
             </div>
           </a>
         </li>
@@ -49,7 +51,9 @@ export default function ContactPage() {
             <FaLinkedin className="mt-0.5 h-5 w-5 shrink-0 text-zinc-500" aria-hidden />
             <div>
               <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">LinkedIn</p>
-              <p className="mt-1 text-sm text-accent">{contact.linkedin.replace(/^https?:\/\//, '')}</p>
+              <p className="mt-1 text-sm text-accent">
+                {contact.linkedin.replace(/^https?:\/\//, '')}
+              </p>
             </div>
           </a>
         </li>
@@ -64,12 +68,14 @@ export default function ContactPage() {
               <SiVelog className="mt-0.5 h-5 w-5 shrink-0 text-zinc-500" aria-hidden />
               <div>
                 <p className="text-xs font-medium uppercase tracking-wide text-zinc-500">Blog</p>
-                <p className="mt-1 text-sm text-accent">{contact.blog.replace(/^https?:\/\//, '')}</p>
+                <p className="mt-1 text-sm text-accent">
+                  {contact.blog.replace(/^https?:\/\//, '')}
+                </p>
               </div>
             </a>
           </li>
         )}
-        <li>
+        {/* <li>
           <a
             href={contact.resumeUrl}
             target="_blank"
@@ -82,7 +88,7 @@ export default function ContactPage() {
               <p className="mt-1 text-sm text-accent">Open PDF</p>
             </div>
           </a>
-        </li>
+        </li> */}
       </ul>
     </FadeIn>
   );

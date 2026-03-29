@@ -1,0 +1,20 @@
+[
+  {
+    "id": "karts",
+    "institution": "한국예술종합학교",
+    "detail": "예술경영 전공",
+    "period": "2009.03 - 2015.08"
+  },
+  {
+    "id": "bootcamp-fe",
+    "institution": "Wecode Frontend Development Bootcamp",
+    "detail": "수료",
+    "period": "2023.07 - 2023.10"
+  },
+  {
+    "id": "bootcamp-fe",
+    "institution": "더조은 컴퓨터아카데미 프론트앤드 실무자 양성과정",
+    "detail": "수료",
+    "period": "2020.02 - 2020.07"
+  }
+]

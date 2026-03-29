@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Section from '@/components/ui/Section';
 import Timeline from '@/components/ui/Timeline';
 import FadeIn from '@/components/ui/FadeIn';
-import { getExperience, getProfile } from '@/lib/data';
+import { getEducation, getExperience, getProfile } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: '소개, 경력, 핵심 가치.',
+  description: '소개, 경력, 교육, 핵심 가치.',
 };
 
 const values = [
@@ -31,6 +31,7 @@ const values = [
 export default function AboutPage() {
   const profile = getProfile();
   const experience = getExperience();
+  const education = getEducation();
 
   const timelineItems = experience.map((e) => ({
     id: e.id,
@@ -54,13 +55,22 @@ export default function AboutPage() {
     ),
   }));
 
+  const educationTimelineItems = education.map((item) => ({
+    id: item.id,
+    period: item.period,
+    title: item.institution,
+    subtitle: item.detail,
+  }));
+
   return (
     <FadeIn>
       <header className="mb-12 border-b border-zinc-100 pb-10">
         <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
           {profile.title}
         </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">About</h1>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
+          About
+        </h1>
         <p className="mt-4 max-w-[65ch] text-[15px] leading-relaxed text-zinc-600 md:text-base">
           {profile.heroIntro}
         </p>
@@ -80,12 +90,18 @@ export default function AboutPage() {
         <Timeline items={timelineItems} />
       </Section>
 
+      <Section title="교육" description="학력·부트캠프 등 교육 이력입니다.">
+        <Timeline items={educationTimelineItems} />
+      </Section>
+
       <Section title="핵심 가치" description="일하는 방식에서 중요하게 두는 기준입니다.">
         <ul className="max-w-[65ch] space-y-8">
           {values.map((value) => (
             <li key={value.title} className="border-l-2 border-zinc-200 pl-5">
               <h3 className="text-base font-semibold text-zinc-900">{value.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600 md:text-[15px]">{value.body}</p>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600 md:text-[15px]">
+                {value.body}
+              </p>
             </li>
           ))}
         </ul>
