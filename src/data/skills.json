@@ -1,0 +1,22 @@
+[
+  {
+    "id": "frontend",
+    "title": "Frontend",
+    "items": ["HTML", "CSS/SCSS", "JavaScript (ES6+)", "TypeScript", "React", "Next.js"]
+  },
+  {
+    "id": "ui",
+    "title": "UI / Publishing",
+    "items": ["반응형·적응형 레이아웃", "웹 접근성(WAI-ARIA)", "시맨틱 마크업", "크로스브라우징"]
+  },
+  {
+    "id": "tools",
+    "title": "Tools",
+    "items": ["Git", "Webpack", "Vite", "Figma 협업", "Storybook"]
+  },
+  {
+    "id": "collab",
+    "title": "Collaboration",
+    "items": ["애자일/스프린트", "코드 리뷰", "Jira/Confluence", "기획·디자인·백엔드와의 스펙 정렬"]
+  }
+]

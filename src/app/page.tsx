@@ -1,176 +1,91 @@
-'use client';
-
-import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
+import FadeIn from '@/components/ui/FadeIn';
+import { getProfile } from '@/lib/data';
 
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+export default function HomePage() {
+  const profile = getProfile();
 
-const HomeContainer = styled.div`
-  width: 100%;
-`;
-
-// Hero Section
-const HeroSection = styled.section`
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  padding: ${({ theme }) => theme.spacing['3xl']} ${({ theme }) => theme.spacing.xl};
-  max-width: 1200px;
-  margin: 0 auto;
-  animation: ${fadeInUp} 0.8s ease-out;
-`;
-
-const HeroContent = styled.div`
-  max-width: 800px;
-`;
-
-const Greeting = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: ${({ theme }) => theme.colors.textLight};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-  font-weight: 400;
-`;
-
-const MainTitle = styled.h1`
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.secondary};
-  line-height: 1.3;
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
-`;
-
-const NameHighlight = styled.span`
-  color: ${({ theme }) => theme.colors.primary};
-`;
-
-const SubTitle = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-  color: ${({ theme }) => theme.colors.text};
-  line-height: 1.8;
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
-  font-weight: 400;
-`;
-
-const Description = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  color: ${({ theme }) => theme.colors.textLight};
-  line-height: 1.8;
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
-`;
-
-const CTAButtons = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing.md};
-  margin-top: ${({ theme }) => theme.spacing['2xl']};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    flex-direction: column;
-  }
-`;
-
-const Button = styled(Link)<{ $variant?: 'primary' | 'outline' }>`
-  padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.xl};
-  border-radius: 8px;
-  font-size: ${({ theme }) => theme.fontSizes.md};
-  font-weight: 600;
-  transition: all ${({ theme }) => theme.transitions.normal};
-  text-align: center;
-  cursor: pointer;
-
-  ${({ theme, $variant }) =>
-    $variant === 'primary'
-      ? `
-    background: ${theme.colors.primary};
-    color: white;
-    border: 2px solid ${theme.colors.primary};
-    
-    &:hover {
-      background: #005bb5;
-      border-color: #005bb5;
-      transform: translateY(-2px);
-      box-shadow: ${theme.shadows.md};
-    }
-  `
-      : `
-    background: transparent;
-    color: ${theme.colors.primary};
-    border: 2px solid ${theme.colors.primary};
-    
-    &:hover {
-      background: ${theme.colors.primary};
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: ${theme.shadows.md};
-    }
-  `}
-`;
-
-// Quote Section
-const QuoteSection = styled.section`
-  padding: ${({ theme }) => theme.spacing['3xl']} ${({ theme }) => theme.spacing.xl};
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const QuoteCard = styled.div`
-  padding: ${({ theme }) => theme.spacing['3xl']};
-  background: linear-gradient(135deg, rgba(0, 112, 243, 0.08), rgba(0, 168, 255, 0.05));
-  border-left: 5px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 12px;
-  text-align: center;
-`;
-
-const Quote = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes['2xl']};
-  font-style: italic;
-  font-weight: 300;
-  color: ${({ theme }) => theme.colors.secondary};
-  letter-spacing: 0.5px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: ${({ theme }) => theme.fontSizes.xl};
-  }
-`;
-
-export default function Home() {
   return (
-    <HomeContainer>
-      {/* Hero Section */}
-      <HeroSection>
-        <HeroContent>
-          <Greeting>안녕하세요,</Greeting>
-          <MainTitle>
-            프론트엔드 개발자
-            <br />
-            <NameHighlight>한지선</NameHighlight>입니다.
-          </MainTitle>
-          <SubTitle>사용자의 여정을 코드로 설계하고, 더 나은 경험으로 이끕니다.</SubTitle>
-          <Description>
-            React와 Next.js를 중심으로 웹 프론트엔드를 개발하며, 보이지 않는 디테일이 좋은 사용자
-            경험을 만든다고 믿습니다.
-          </Description>
-          <CTAButtons>
-            <Button href="/about" $variant="primary">
-              더 알아보기
-            </Button>
-            <Button href="/projects" $variant="outline">
-              프로젝트 보기
-            </Button>
-            <Button href="/contact" $variant="outline">
-              연락하기
-            </Button>
-          </CTAButtons>
-        </HeroContent>
-      </HeroSection>
-    </HomeContainer>
+    <div>
+      <FadeIn>
+        <section className="flex min-h-[78vh] flex-col justify-center py-16 md:min-h-[85vh] md:py-24">
+          <div className="max-w-4xl">
+            <p className="text-sm font-medium tracking-[0.18em] text-zinc-500 uppercase">
+              Frontend Developer
+            </p>
+
+            <h1 className="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight text-zinc-900 md:text-6xl">
+              사용자 경험을
+              <br />
+              더 나은 인터페이스로 연결하는
+              <br />
+              프론트엔드 개발자
+              <br />
+              <span className="text-accent">{profile.name}</span>입니다.
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-600 md:text-lg">
+              퍼블리싱 기반의 UI 디테일과 React 중심의 개발 경험을 바탕으로, 사용성과 유지보수를
+              함께 고려한 프론트엔드를 구현합니다.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                View Projects
+              </Link>
+
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-800 transition hover:bg-zinc-50"
+              >
+                About Me
+              </Link>
+
+              <a
+                href={profile.contact.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full px-2 py-2.5 text-sm font-medium text-zinc-500 underline-offset-4 transition hover:text-zinc-900 hover:underline"
+              >
+                Resume
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-14 border-t border-zinc-200 pt-6">
+            <div className="flex flex-wrap gap-3">
+              {profile.strengths.map((strength) => (
+                <span
+                  key={strength}
+                  className="rounded-full bg-zinc-100 px-4 py-2 text-sm text-zinc-700"
+                >
+                  {strength}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-6 text-sm text-zinc-500 md:grid-cols-3">
+              <div>
+                <p className="text-2xl font-semibold tracking-tight text-zinc-900">5+</p>
+                <p className="mt-1">Years of Experience</p>
+              </div>
+              <div>
+                <p className="text-2xl font-semibold tracking-tight text-zinc-900">
+                  Legacy → React
+                </p>
+                <p className="mt-1">Vanilla JS기반 레거시부터 React까지</p>
+              </div>
+              <div>
+                <p className="text-2xl font-semibold tracking-tight text-zinc-900">UI / UX</p>
+                <p className="mt-1">접근성, 구조, 협업 중심 개발</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+    </div>
   );
 }
