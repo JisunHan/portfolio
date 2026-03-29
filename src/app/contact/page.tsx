@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { FaGithub, FaLinkedin, FaRegFilePdf } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiVelog } from 'react-icons/si';
 import EmailCopy from '@/components/contact/EmailCopy';
 import FadeIn from '@/components/ui/FadeIn';
