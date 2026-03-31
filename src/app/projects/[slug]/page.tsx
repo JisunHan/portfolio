@@ -7,6 +7,7 @@ import BodyText from '@/components/projects/BodyText';
 import ProjectDetailSection from '@/components/projects/ProjectDetailSection';
 import ProjectDetailToc from '@/components/projects/ProjectDetailToc';
 import ProjectQuickFacts from '@/components/projects/ProjectQuickFacts';
+import ProjectScreens from '@/components/projects/ProjectScreens';
 import { getProjectBySlug, getProjects } from '@/lib/data';
 import {
   PROJECT_DETAIL_SECTIONS,
@@ -60,15 +61,23 @@ export default async function ProjectDetailPage({ params }: Props) {
       </Link>
 
       <header className="mt-8 border-b border-zinc-200 pb-10">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">Case study</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">{project.title}</h1>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+          Case study
+        </p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
+          {project.title}
+        </h1>
         <p className="mt-5 max-w-[65ch] text-lg leading-relaxed text-zinc-600 md:text-xl md:leading-relaxed">
           {project.shortDescription}
         </p>
       </header>
 
       <div className="mt-8 space-y-8">
-        <ProjectQuickFacts duration={project.duration} role={project.role} techStack={project.techStack} />
+        <ProjectQuickFacts
+          duration={project.duration}
+          role={project.role}
+          techStack={project.techStack}
+        />
         <ProjectDetailToc />
       </div>
 
@@ -85,6 +94,10 @@ export default async function ProjectDetailPage({ params }: Props) {
           </ProjectDetailSection>
         ))}
       </article>
+
+      {project.images && project.images.length > 0 && (
+        <ProjectScreens images={project.images} />
+      )}
     </FadeIn>
   );
 }

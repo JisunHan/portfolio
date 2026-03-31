@@ -2,6 +2,14 @@ export type Project = {
   slug: string;
   title: string;
   shortDescription: string;
+  images?: Array<{
+    /** Public path under /public (e.g. /images/projects/foo/01.png) */
+    src: string;
+    /** Accessible description (what is shown) */
+    alt: string;
+    /** Optional one-line context for scanners */
+    caption?: string;
+  }>;
   techStack: string[];
   duration: string;
   role: string;

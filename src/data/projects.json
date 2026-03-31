@@ -3,7 +3,29 @@
     "slug": "acuvue-multifocal-ai-fitting",
     "title": "스마트 피팅 (AI 기반 렌즈 추천 서비스)",
     "shortDescription": "노안 소비자를 위한 멀티포컬 콘택트렌즈 추천 서비스. 문진·검안 데이터를 결합해 AI가 적합한 렌즈 타입과 도수를 제안하며, 반복적인 시험 착용 과정의 비효율을 줄이는 것을 목표로 합니다. (아큐브® 멀티포컬 AI 피팅 프로그램)",
-    "techStack": ["React", "TypeScript", "SCSS"],
+    "images": [
+      {
+        "src": "/images/projects/acuvue-multifocal-ai-fitting/smartfitting1.png",
+        "alt": "스마트 피팅 입력 화면 - 굴절검사 도수 입력",
+        "caption": "검안(굴절) 결과를 입력하는 핵심 기능인 계산기 화면"
+      },
+      {
+        "src": "/images/projects/acuvue-multifocal-ai-fitting/smartfitting2.png",
+        "alt": "스마트 피팅 입력 화면 - 라이프 스타일 문진 진행",
+        "caption": "문진표를 작성, 저장하여 추천 결과로 이어지는 플로우"
+      },
+      {
+        "src": "/images/projects/acuvue-multifocal-ai-fitting/smartfitting3.png",
+        "alt": "스마트 피팅 결과 화면 - 추천 도수 및 렌즈 타입",
+        "caption": "사용자/안경사가 이해하기 쉬운 추천 결과 정보 구조"
+      },
+      {
+        "src": "/images/projects/acuvue-multifocal-ai-fitting/smartfitting4.png",
+        "alt": "스마트 피팅 결과 화면 - 제품 특징 자세히 보기",
+        "caption": "결과 페이지 내 제품 상세 안내 바텀시트"
+      }
+    ],
+    "techStack": ["React", "TypeScript", "Emotion"],
     "duration": "2025.03 - 현재",
     "role": "프론트엔드 개발",
     "featured": true,
